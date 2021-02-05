@@ -3,25 +3,25 @@
     <script type="text/javascript"></script>
 </head>
 <style type="text/css">
-			.contact{width: 100%;height: auto;padding: 5vw 0;background: #1975FF;}
+			.contact{width: 100%;height: 100%;padding: 5vw 0;background: #1975FF;}
 			.wechat_code{width: 100%;text-align: center;}
-			.wechat_code img{width: 60vw;height: auto;}
+			.wechat_code img{width: auto; height: 80vh;}
 			.wechat_code p{font: 4vw/1 "微软雅黑";color: #fff;}
 </style>
 <body>
 		 <div class="contact">
 			 <div class="wechat_code">
-				 <img src="img/1.jpg"/>
+				 <img src="img/1.png"/>
 			 </div>
 
 		 </div>
     </body>
 <script type="text/javascript">
 			$(function(){
-			   var Img = parseInt(Math.random()*3,10)+1; //随机生成1到3的整数数字
+			   var Img = parseInt(Math.random()*10,10)+1; //随机生成1到10的整数数字
 			   updataImg(Img);//调用更新函数
 			   function updataImg(Img){
-			   	 $(".wechat_code img").attr({"src":"img/"+Img+".jpg"});//随机改变图片
+			   	 $(".wechat_code img").attr({"src":"img/"+Img+".png"});//随机改变图片
 			   }
 		   });
 </script>
