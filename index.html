@@ -1,11 +1,11 @@
 <head>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="jquery.js"></script>
     <script type="text/javascript"></script>
 </head>
 <style type="text/css">
-			.contact{width: 100%;height: 100%;padding: 5vw 0;background: #1975FF;}
-			.wechat_code{width: 100%;text-align: center;}
-			.wechat_code img{width: auto; height: 80vh;}
+			.contact{width: auto;height: 100%; background: #1975FF;overflow: auto;}
+			.wechat_code{width: 100%; height: 100%;text-align: center;}
+			.wechat_code img{width: auto; height: 90vh;align-items: center;align-content: center;  margin-top: 5vh;}
 			.wechat_code p{font: 4vw/1 "微软雅黑";color: #fff;}
 </style>
 <body>
@@ -21,7 +21,7 @@
 			   var Img = parseInt(Math.random()*10,10)+1; //随机生成1到10的整数数字
 			   updataImg(Img);//调用更新函数
 			   function updataImg(Img){
-			   	 $(".wechat_code img").attr({"src":"img/"+Img+".png"});//随机改变图片
+			   	 $(".wechat_code img").attr({"src":"img/"+Img+".png"});//随机改变图
 			   }
 		   });
 </script>
