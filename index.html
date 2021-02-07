@@ -3,17 +3,114 @@
     <script type="text/javascript"></script>
 </head>
 <style type="text/css">
-			.contact{width: 100%;height: 100%; background: #1975FF;overflow: auto;}
-			.wechat_code{width: 100%; height: 100%;text-align: center;overflow: inherit}
+    
+            @font-face
+            {
+                font-family: "优设";
+                src: url(fonts/优设标题黑.ttf);
+            }
+    
+            body
+            {
+                background: url(img/poster.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+				-o-background-size: cover;                
+				background-size: cover;
+            }
+    
+			.context{width: 100%;height: 100%;overflow: auto;}
+			.wechat_code{width: 100%; height: 90%;text-align: center;overflow: inherit}
 			.wechat_code img{width: auto; height: 90%;align-items: center;align-content: center;  margin-top: 5vh;}
-			.wechat_code p{font: 4vw/1 "微软雅黑";color: #fff;}
+            .wechat_code img 
+            {
+                animation: comein 2s ease-out;
+            }
+    
+            @keyframes comein
+            {
+                0% {
+                    transform: scale(0.9);
+                }
+                20% {
+                    transform: scale(1.1);
+                }
+                25% {
+                    transform: scale(1);
+                }
+                40% {
+                    transform: rotate(7deg);
+                }
+                70% {
+                    transform: rotate(-7deg);
+                    }
+                450%, 90% {
+                    transform: rotate(0);
+                }
+            }
+            @-webkit-keyframes comein
+            {
+                0% {
+                    transform: scale(0.9);
+                }
+                20% {
+                    transform: scale(1.1);
+                }
+                25% {
+                    transform: scale(1);
+                }
+                40% {
+                    transform: rotate(7deg);
+                }
+                70% {
+                    transform: rotate(-7deg);
+                    }
+                450%, 90% {
+                    transform: rotate(0);
+                }
+            }
+            
+            #button {
+                height: 10%;
+                text-align: center;
+                cursor:alias;
+                margin-bottom: 2em;
+/*                background-color: #fec501;*/
+                
+            }
+             button {
+                padding: .5em;
+                padding-left: 1em;
+                padding-right: 1em;
+                text-align: center;
+                background-color: #fec501;
+                font-family: "优设";
+                font-size: 1em;
+                border: none;
+                border-radius: 1em;
+                color: #b6280f;
+/*                box-shadow: .05em .1em .2em rgba(0,0,0,.6) outset;*/
+                letter-spacing: .15em;
+            }
+            button:active {
+                padding: .5em;
+                padding-left: 1em;
+                padding-right: 1em;
+                text-align: center;
+                transform: scale(1.05);
+                border: none;
+                color: #b6280f;
+/*                box-shadow: .05em .1em .2em rgba(0,0,0,.6) outset;*/
+                letter-spacing: .15em;
+            }
 </style>
 <body>
-		 <div class="contact">
+		 <div class="context">
 			 <div class="wechat_code">
 				 <img src="img/1.png"/>
 			 </div>
-
+             <div id = button>
+                <button onClick="window.location.reload();">再抽一次</button>
+             </div>
 		 </div>
     </body>
 <script type="text/javascript">
@@ -24,4 +121,14 @@
 			   	 $(".wechat_code img").attr({"src":"img/"+Img+".png"});//随机改变图
 			   }
 		   });
+    
+        const reloadButton = document.querySelector("#reload");
+        // Reload everything:
+        function reload() {
+            reload = location.reload();
+        }
+        // Event listeners for reload
+        reloadButton.addEventListener("click", reload, false);
+    
 </script>
+
