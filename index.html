@@ -20,20 +20,22 @@
             }
     
 			.context{width: 100%;height: 100%;overflow: auto;}
-			.wechat_code{width: 100%; height: 90%;text-align: center;overflow: inherit}
-			.wechat_code img{width: auto; height: 90%;align-items: center;align-content: center;  margin-top: 5vh;}
+			.wechat_code{display: flex; width: 100%; height: 90%;text-align: center;align-items: center;}
+			.wechat_code img{width: 100%; height: auto;align-items: center;align-content: center;  margin-top: 5vh;}
             .wechat_code img 
             {
-                animation: comein 2s ease-out;
+                animation: comein 1.5s ease;
+                
             }
     
             @keyframes comein
             {
                 0% {
-                    transform: scale(0.9);
+                    transform: rotateY(1080deg);
                 }
-                20% {
-                    transform: scale(1.1);
+/*
+                90% {
+                    transform: scale(1);
                 }
                 25% {
                     transform: scale(1);
@@ -47,6 +49,7 @@
                 450%, 90% {
                     transform: rotate(0);
                 }
+*/
             }
             @-webkit-keyframes comein
             {
@@ -114,15 +117,17 @@
 <body>
 		 <div class="context">
 			 <div class="wechat_code">
-				 <img src="img/1.png"/>
+				 <img src="img_download/1.jpg"/>
 			 </div>
              <div id= "button">
 <!--                <div id = "reload">-->
-                    <button id="reload" onClick="window.location.reload();">再抽一次</button>
+                    <button id="reload" onClick="updataImg(Img)">再抽一次</button>
 <!--                </div>-->
+<!--
                     <a id="save" download="Tamen">
                         <button>保存图片</button>
                     </a>
+-->
              </div>
 		 </div>
     </body>
@@ -131,10 +136,10 @@
 			   var Img = parseInt(Math.random()*10,10)+1; //随机生成1到10的整数数字
 			   updataImg(Img);//调用更新函数
 			   function updataImg(Img){
-			   	 $(".wechat_code img").attr({"src":"img/"+Img+".png"});//随机改变图
+			   	 $(".wechat_code img").attr({"src":"img_download/"+Img+".jpg"});//随机改变图
+//                 $("#save").attr({"href":"img_download/"+Img+".jpg"});
 			   }
                 
-            $("#save").attr({"href":"img_download/"+Img+".jpg"});
 		   });
     
         const reloadButton = document.querySelector("#reload");
