@@ -13,7 +13,7 @@
     
             body
             {
-                background: url(img/poster.jpg) no-repeat center center fixed;
+                background: url(img/poster.png) no-repeat center center fixed;
                 -webkit-background-size: cover;
 				-o-background-size: cover;                
 				background-size: cover;
@@ -103,14 +103,26 @@
 /*                box-shadow: .05em .1em .2em rgba(0,0,0,.6) outset;*/
                 letter-spacing: .15em;
             }
+            
+            #reload {
+                margin: 1em;
+            }        
+            #save {
+                margin: 1em;
+            } 
 </style>
 <body>
 		 <div class="context">
 			 <div class="wechat_code">
 				 <img src="img/1.png"/>
 			 </div>
-             <div id = button>
-                <button onClick="window.location.reload();">再抽一次</button>
+             <div id= "button">
+<!--                <div id = "reload">-->
+                    <button id="reload" onClick="window.location.reload();">再抽一次</button>
+<!--                </div>-->
+                    <a id="save" download="Tamen">
+                        <button>保存图片</button>
+                    </a>
              </div>
 		 </div>
     </body>
@@ -121,6 +133,8 @@
 			   function updataImg(Img){
 			   	 $(".wechat_code img").attr({"src":"img/"+Img+".png"});//随机改变图
 			   }
+                
+            $("#save").attr({"href":"img_download/"+Img+".jpg"});
 		   });
     
         const reloadButton = document.querySelector("#reload");
