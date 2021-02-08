@@ -18,29 +18,14 @@
 				-o-background-size: cover;                
 				background-size: cover;
                 margin: 0;
-                background-color: #ac1313;
             }
     
-			.context{
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-
-            }
-			.wechat_code{
-                display: flex; 
-                width: 100%; 
-                height: 90%;
-                text-align: center;
-                align-items: center;
-                overflow:hidden;
-            }
-			.wechat_code img{ height: 100%; align-items: center;align-content: center;  }
+			.context{width: 100%;height: 100%;overflow: auto;}
+			.wechat_code{display: flex; width: 100%; height: 90%;text-align: center;align-items: center;}
+			.wechat_code img{width: 100%; height: auto;align-items: center;align-content: center;  margin-top: 5vh;}
             .wechat_code img 
             {
-                display: fixed;
                 animation: comein 1.5s ease;
-                
                 
             }
     
@@ -48,7 +33,7 @@
             {
                 0% {
 /*                    transform: rotateY(720deg);*/
-                    filter: blur(4px);
+                    filter: blur(8px);
                 }
                 100% {
                     transform: rotateY(1080deg);
@@ -84,14 +69,10 @@
             }
             
             #button {
-                width: 100%;
-                position:fixed;
                 height: 10%;
                 text-align: center;
-                align-items: center;
-                align-content: center;
-                cursor: pointer;
-                bottom: 2em;
+                cursor:alias;
+                margin-bottom: 2em;
 /*                background-color: #fec501;*/
                 
             }
@@ -108,7 +89,6 @@
                 color: #b6280f;
 /*                box-shadow: .05em .1em .2em rgba(0,0,0,.6) outset;*/
                 letter-spacing: .15em;
-                 cursor: pointer;
             }
             button:active {
                 padding: .5em;
@@ -120,7 +100,6 @@
                 color: #b6280f;
 /*                box-shadow: .05em .1em .2em rgba(0,0,0,.6) outset;*/
                 letter-spacing: .15em;
-                cursor: pointer;
             }
             
             #reload {
@@ -132,11 +111,9 @@
 </style>
 <body>
 		 <div class="context">
-<!--
 			 <div class="wechat_code">
 				 <img src="img_download/1.jpg"/>
 			 </div>
--->
              <div id= "button">
 <!--                <div id = "reload">-->
                     <button id="reload" onClick="updataImg(Img)">再抽一次</button>
@@ -153,8 +130,7 @@
 			$(function(){
 			   var Img = parseInt(Math.random()*10,10)+1; //随机生成1到10的整数数字
 			   updataImg(Img);//调用更新函数
-                const Url = $("body").css("background");
-                $("body").css("background-image", "url(img_download/"+Img+".jpg)");
+                $("body").append("background").attr({"url":"img_download/"+Img+".jpg"});
 			   function updataImg(Img){
 			   	 $(".wechat_code img").attr({"src":"img_download/"+Img+".jpg"});//随机改变图
 //                 $("#save").attr({"href":"img_download/"+Img+".jpg"});
